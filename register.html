@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Хэрэглэгчийн Бүртгэлийн Форм</title>
+</head>
+<body>
+
+    <!-- 1. Семантик бүтэц: HEADER -->
+    <header>
+        <h1>Сургуулийн Системийн Бүртгэл</h1>
+        <p>Та доорх анкетыг үнэн зөв зааврын дагуу бөглөнө үү.</p>
+    </header>
+
+    <hr>
+
+    <!-- 1. Семантик бүтэц: MAIN -->
+    <main>
+        <section>
+            <h2>Хэрэглэгчийн Анкет</h2>
+
+            <form action="#" method="POST">
+                
+                <!-- 2 & 3. Input: TEXT -->
+                <div>
+                    <label for="fullname">Нэр:</label><br>
+                    <input type="text" id="fullname" name="fullname" placeholder="Жишээ: Ганбаяр" required minlength="2">
+                </div>
+                <br>
+
+                <!-- 2 & 3. Input: EMAIL -->
+                <div>
+                    <label for="email">И-мэйл хаяг:</label><br>
+                    <input type="email" id="email" name="email" placeholder="name@example.com" required>
+                </div>
+                <br>
+
+                <!-- 2 & 3. Input: PASSWORD -->
+                <div>
+                    <label for="password">Нууц үг:</label><br>
+                    <input type="password" id="password" name="password" required minlength="8" placeholder="Амжилттай 8+ тэмдэгт">
+                </div>
+                <br>
+
+                <!-- 2 & 3. Input: DATE -->
+                <div>
+                    <label for="dob">Төрсөн огноо:</label><br>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+                <br>
+
+                <!-- 2 & 3. Input: RADIO (Хүйс) -->
+                <div>
+                    <label>Хүйс:</label><br>
+                    <input type="radio" id="male" name="gender" value="male" required>
+                    <label for="male">Эрэгтэй</label>
+                    
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Эмэгтэй</label>
+                </div>
+                <br>
+
+                <!-- 2 & 3. Input: SELECT (Мэргэжил/Сургууль) -->
+                <div>
+                    <label for="department">Суралцаж буй салбар:</label><br>
+                    <select id="department" name="department" required>
+                        <option value="">-- Сонгоно уу --</option>
+                        <option value="cs">Компьютерын ухаан</option>
+                        <option value="se">Программ хангамж</option>
+                        <option value="it">Мэдээллийн технологи</option>
+                    </select>
+                </div>
+                <br>
+
+                <!-- 2 & 3. Input: CHECKBOX (Сонирхол) -->
+                <div>
+                    <label>Сонирхол / Сонирхдог чиглэл:</label><br>
+                    <input type="checkbox" id="web" name="interests" value="web">
+                    <label for="web">Вэб хөгжүүлэлт</label><br>
+
+                    <input type="checkbox" id="mobile" name="interests" value="mobile">
+                    <label for="mobile">Мобайл апп</label><br>
+
+                    <input type="checkbox" id="ai" name="interests" value="ai">
+                    <label for="ai">Хиймэл интеллект (AI)</label>
+                </div>
+                <br>
+
+                <!-- 5. VALIDATION: Phone Number with PATTERN -->
+                <div>
+                    <label for="phone">Утасны дугаар (8 оронтой тоо):</label><br>
+                    <input type="tel" id="phone" name="phone" pattern="[0-9]{8}" placeholder="99112233" required title="Яг 8 оронтой тоо бичнэ үү">
+                </div>
+                <br>
+
+                <!-- Илгээх ба Арилгах товчлуур -->
+                <button type="submit">Бүртгүүлэх</button>
+                <button type="reset">Арилгах</button>
+
+            </form>
+        </section>
+    </main>
+
+    <hr>
+
+    <!-- 1. Семантик бүтэц: FOOTER -->
+    <footer>
+        <p>&copy; 2026 ШУТИС - МХТС. Бүх эрх хуулиар хамгаалагдсан.</p>
+    </footer>
+
+</body>
+</html>
