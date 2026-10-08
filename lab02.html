@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Лаборатори 02: Хэрэглэгчийн анкет</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -35,8 +36,11 @@
                     <fieldset>
                         <legend>Хувийн мэдээлэл</legend>
                         
-                        <label for="fullname">Овог нэр:</label><br>
-                        <input type="text" id="fullname" name="fullname" placeholder="Г. Ганбаяр" required minlength="2"><br><br>
+                        <div class="badge-container">
+    <span class="badge">Заавал</span>
+    <label for="fullname">Овог нэр:</label>
+    <input type="text" id="fullname" name="fullname" placeholder="И. Болдбаатар" required>
+</div><br><br>
 
                         <label for="email">Цахим хаяг (Email):</label><br>
                         <input type="email" id="email" name="email" placeholder="example@email.com" required><br><br>
