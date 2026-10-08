@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лаб 04: Flexbox & Grid Layout</title>
+    <link rel="stylesheet" href="style04.css">
+</head>
+<body>
+
+    <!-- Header & Navigation Bar (Flexbox) -->
+    <header class="main-header">
+        <div class="logo">МХТС Портал</div>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="index.html">Нүүр</a></li>
+                <li><a href="lab02.html">Лаб 02</a></li>
+                <li><a href="#">Мэдээлэл</a></li>
+                <li><a href="#">Холбоо барих</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Container Layout (Grid: Main content + Sidebar) -->
+    <div class="layout-container">
+        
+        <!-- Үндсэн контент (Grid: 3 Баганатай карт) -->
+        <main class="main-content">
+            <h2>Сүүлийн үеийн мэдээнүүд</h2>
+            
+            <div class="card-grid">
+                <article class="card">
+                    <h3>Мэдээ 1</h3>
+                    <p>Flexbox болон Grid ашиглан вэбийн бүтцийг хялбархан зохиох боломжтой.</p>
+                </article>
+                <article class="card">
+                    <h3>Мэдээ 2</h3>
+                    <p>CSS Grid нь олон багана болон мөртэй контентыг өрөхөд нэн тохиромжтой.</p>
+                </article>
+                <article class="card">
+                    <h3>Мэдээ 3</h3>
+                    <p>Responsive дизайн хийхэд эдгээр технологиудыг хослуулан ашигладаг.</p>
+                </article>
+            </div>
+        </main>
+
+        <!-- Sidebar (Завсар / Хажуугийн хэсэг) -->
+        <aside class="sidebar">
+            <h3>Зарууд & Холбоос</h3>
+            <ul>
+                <li><a href="#">Шуурхай зар 1</a></li>
+                <li><a href="#">Шуурхай зар 2</a></li>
+                <li><a href="#">Сургуулийн календарь</a></li>
+            </ul>
+        </aside>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <p>&copy; 2026 Вэб зохиомж - Лаб 04. Бүх эрх хуулиар хамгаалагдсан.</p>
+    </footer>
+
+</body>
+</html>
