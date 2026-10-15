@@ -1,150 +1,384 @@
-<!DOCTYPE html>
-<html lang="mn">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ганбаяр | Software & Web Developer</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts & Font Awesome Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
+/* --- Global Reset & Variables --- */
+:root {
+    --bg-color: #0b0f17;
+    --card-bg: rgba(22, 31, 48, 0.65);
+    --border-color: rgba(255, 255, 255, 0.08);
+    --text-main: #f3f4f6;
+    --text-muted: #9ca3af;
+    --accent-blue: #38bdf8;
+    --accent-purple: #818cf8;
+    --gradient-primary: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+    --font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+}
 
-    <!-- Background Glow Effects -->
-    <div class="bg-glow blob-1"></div>
-    <div class="bg-glow blob-2"></div>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
 
-    <!-- Header / Navigation -->
-    <header class="navbar">
-        <div class="nav-container">
-            <a href="#" class="logo">&lt;Ganbayar<span class="highlight">/&gt;</span></a>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#about" class="nav-item active">Тухай</a></li>
-                    <li><a href="#skills" class="nav-item">Чадвар</a></li>
-                    <li><a href="#labs" class="nav-item">Лабораториуд</a></li>
-                    <li><a href="#contact" class="nav-item">Холбоо барих</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+}
 
-    <!-- Main Container -->
-    <main class="main-wrapper">
+/* Background Ambient Glow */
+.bg-glow {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    filter: blur(140px);
+    z-index: -1;
+    opacity: 0.35;
+    pointer-events: none;
+}
 
-        <!-- Hero Section -->
-        <section id="about" class="hero-section">
-            <div class="hero-content">
-                <div class="status-badge">
-                    <span class="status-dot"></span> Мэдээллийн Систем — 2-р курс
-                </div>
-                <h1 class="hero-title">Сайн байна уу, намайг <span class="gradient-text">Ганбаяр</span> гэдэг</h1>
-                <p class="hero-description">
-                    Би ШУТИС-ийн Мэдээллийн Системийн чиглэлээр суралцдаг ба вэб хөгжүүлэлт, С++ болон программчлалын орчин үеийн технологиудыг шимтэн судалдаг.
-                </p>
-                <div class="hero-actions">
-                    <a href="#labs" class="btn btn-primary"><i class="fa-solid fa-code"></i> Лаб Даалгаврууд</a>
-                    <a href="https://github.com/bactevirus" target="_blank" class="btn btn-secondary"><i class="fa-brands fa-github"></i> GitHub Профайл</a>
-                </div>
-            </div>
-        </section>
+.blob-1 {
+    top: -50px;
+    left: -100px;
+    background: #38bdf8;
+}
 
-        <!-- Skills Section -->
-        <section id="skills" class="section">
-            <h2 class="section-heading"><i class="fa-solid fa-laptop-code"></i> Технологийн чадварууд</h2>
-            <div class="skills-grid">
-                
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fa-brands fa-html5"></i></div>
-                    <h3>HTML5 & CSS3</h3>
-                    <p>Semantic HTML5, CSS Flexbox, Grid болон Responsive (гар утас, таблет)-д тааруулж зохиомжлох.</p>
-                    <div class="skill-tags">
-                        <span>Flexbox</span>
-                        <span>CSS Grid</span>
-                        <span>Media Queries</span>
-                    </div>
-                </div>
+.blob-2 {
+    top: 400px;
+    right: -100px;
+    background: #818cf8;
+}
 
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fa-solid fa-code-branch"></i></div>
-                    <h3>Git & GitHub</h3>
-                    <p>Кодын хувилбар удирдлага, коммит хийх, репозитори хөтлөх болон GitHub Pages дээр деплой хийх.</p>
-                    <div class="skill-tags">
-                        <span>Git CLI</span>
-                        <span>GitHub Pages</span>
-                        <span>Version Control</span>
-                    </div>
-                </div>
+/* --- Navbar (Glassmorphism) --- */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(11, 15, 23, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 0;
+}
 
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fa-solid fa-c"></i></div>
-                    <h3>C++ Programmming</h3>
-                    <p>Алгоритм, өгөгдлийн бүтэц болон объектод чиглэсэн програмчлалын (OOP) үндсүүдийг эзэмшсэн.</p>
-                    <div class="skill-tags">
-                        <span>OOP</span>
-                        <span>Algorithms</span>
-                        <span>Data Structures</span>
-                    </div>
-                </div>
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-            </div>
-        </section>
+.logo {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--text-main);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
 
-        <!-- Lab Work Showcase Section -->
-        <section id="labs" class="section">
-            <h2 class="section-heading"><i class="fa-solid fa-folder-open"></i> Вэб зохиомж — Лабораторийн ажлууд</h2>
-            <div class="labs-grid">
+.logo .highlight {
+    color: var(--accent-blue);
+}
 
-                <a href="lab02.html" class="lab-card">
-                    <div class="lab-header">
-                        <span class="lab-badge">Лаб 02</span>
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </div>
-                    <h3>Semantic HTML & Form</h3>
-                    <p>Семантик HTML бүтэц, хэрэглэгчийн анкетын форм, жагсаалт болон хүснэгтийн бүтэц.</p>
-                </a>
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
 
-                <a href="lab04.html" class="lab-card">
-                    <div class="lab-header">
-                        <span class="lab-badge">Лаб 04</span>
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </div>
-                    <h3>Flexbox & Grid Layout</h3>
-                    <p>CSS Flexbox болон CSS Grid ашиглан вэбийн бүтэн макет (Header, Main, Sidebar, Footer) зохиох.</p>
-                </a>
+.nav-item {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
 
-                <a href="lab05.html" class="lab-card">
-                    <div class="lab-header">
-                        <span class="lab-badge">Лаб 05</span>
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </div>
-                    <h3>Responsive Static Page</h3>
-                    <p>Mobile-First зарчим, Media Queries ба дэлгэцийн хэмжээнд уян хатан зохицох вэб хуудас.</p>
-                </a>
+.nav-item:hover, .nav-item.active {
+    color: var(--accent-blue);
+}
 
-            </div>
-        </section>
+/* --- Layout Wrapper --- */
+.main-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
 
-        <!-- Contact Section -->
-        <section id="contact" class="section">
-            <div class="contact-box">
-                <h2>Хамтран ажиллах & Холбоо барих</h2>
-                <p>Намтар, лабораторийн ажлууд болон бусад төслүүдийг GitHub дээрээс үзэх боломжтой.</p>
-                <div class="social-links">
-                    <a href="https://github.com/bactevirus" target="_blank" class="social-btn"><i class="fa-brands fa-github"></i> GitHub</a>
-                </div>
-            </div>
-        </section>
+/* --- Hero Section --- */
+.hero-section {
+    padding: 5rem 0 4rem;
+}
 
-    </main>
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 1rem;
+    background: rgba(56, 189, 248, 0.1);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    border-radius: 50px;
+    color: var(--accent-blue);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
 
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2026 Ганбаяр. Бүх эрх хуулиар хамгаалагдсан.</p>
-    </footer>
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent-blue);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--accent-blue);
+}
 
-</body>
-</html>
+.hero-title {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1.2rem;
+    letter-spacing: -1px;
+}
+
+.gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-description {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    max-width: 650px;
+    margin-bottom: 2rem;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.8rem 1.6rem;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.btn-primary {
+    background: var(--gradient-primary);
+    color: #0b0f17;
+    box-shadow: 0 4px 20px rgba(56, 189, 248, 0.25);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(56, 189, 248, 0.4);
+}
+
+.btn-secondary {
+    background: var(--card-bg);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
+}
+
+/* --- Section Formatting --- */
+.section {
+    padding: 4rem 0;
+}
+
+.section-heading {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--text-main);
+}
+
+.section-heading i {
+    color: var(--accent-blue);
+}
+
+/* --- Skills Grid --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.skill-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 1.8rem;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+    border-color: rgba(56, 189, 248, 0.3);
+    transform: translateY(-4px);
+}
+
+.skill-icon {
+    font-size: 2rem;
+    color: var(--accent-blue);
+    margin-bottom: 1rem;
+}
+
+.skill-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.6rem;
+}
+
+.skill-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1.2rem;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.skill-tags span {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.6rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    color: var(--text-muted);
+}
+
+/* --- Labs Grid --- */
+.labs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.lab-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 1.8rem;
+    text-decoration: none;
+    color: var(--text-main);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.lab-card:hover {
+    border-color: var(--accent-purple);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.lab-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.lab-badge {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--accent-purple);
+    background: rgba(129, 140, 248, 0.15);
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+}
+
+.lab-header i {
+    color: var(--text-muted);
+    transition: color 0.2s;
+}
+
+.lab-card:hover .lab-header i {
+    color: var(--accent-purple);
+}
+
+.lab-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.lab-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* --- Contact Box --- */
+.contact-box {
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.08) 0%, rgba(129, 140, 248, 0.08) 100%);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.contact-box h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.contact-box p {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #ffffff;
+    color: #0b0f17;
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.2s;
+}
+
+.social-btn:hover {
+    transform: scale(1.03);
+}
+
+/* --- Footer --- */
+.footer {
+    text-align: center;
+    padding: 2.5rem 0;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    .nav-links {
+        gap: 1rem;
+    }
+}
