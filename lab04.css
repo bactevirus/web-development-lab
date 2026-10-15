@@ -34,7 +34,7 @@ body {
 }
 
 .nav-bar a {
-    color: #f8fafc;
+    color: #dde0e3;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s;
@@ -115,4 +115,8 @@ body {
     background-color: #1e293b;
     color: #94a3b8;
     margin-top: 2rem;
+}
+
+.sidebar body{
+    
 }

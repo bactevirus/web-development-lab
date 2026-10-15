@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лаб 05: Responsive Анкет ба Портал</title>
+    <link rel="stylesheet" href="style05.css">
+</head>
+<body>
+
+    <!-- Header & Navigation Bar -->
+    <header class="main-header">
+        <div class="logo">Оюутны Портал</div>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="index.html">Нүүр</a></li>
+                <li><a href="lab02.html">Лаб 02</a></li>
+                <li><a href="lab04.html">Лаб 04</a></li>
+                <li><a href="lab05.html" class="active">Лаб 05</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Container -->
+    <div class="layout-container">
+        
+        <!-- Үндсэн агуулга: Анкет + Хүснэгт -->
+        <main class="main-content">
+            
+            <!-- Лаб 3-ын Бүртгэлийн Анкет -->
+            <section class="form-section">
+                <h2>Хэрэглэгчийн Бүртгэлийн Анкет</h2>
+                <p class="section-desc">Доорх формын дагуу мэдээллээ бүрэн, үнэн зөв бөглөнө үү.</p>
+
+                <form action="#" method="POST" enctype="multipart/form-data">
+                    
+                    <fieldset>
+                        <legend>Хувийн мэдээлэл</legend>
+                        <div class="form-group">
+                            <label for="fullname">Овог нэр:</label>
+                            <input type="text" id="fullname" name="fullname" placeholder="Г.Ганбаяр" required minlength="2">
+                        </div>
+
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="email">Цахим хаяг:</label>
+                                <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Утасны дугаар:</label>
+                                <input type="tel" id="phone" name="phone" pattern="[0-9]{8}" placeholder="94912039" required>
+                            </div>
+                        </div>
+
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="password">Нууц үг:</label>
+                                <input type="password" id="password" name="password" required minlength="6">
+                            </div>
+                            <div class="form-group">
+                                <label for="dob">Төрсөн огноо:</label>
+                                <input type="date" id="dob" name="dob" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group radio-group">
+                            <label>Хүйс:</label>
+                            <label><input type="radio" name="gender" value="male"> Эрэгтэй</label>
+                            <label><input type="radio" name="gender" value="female"> Эмэгтэй</label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Боловсрол ба Сонирхол</legend>
+                        <div class="form-group">
+                            <label for="degree">Суралцаж буй түвшин:</label>
+                            <select id="degree" name="degree" required>
+                                <option value="">-- Сонгоно уу --</option>
+                                <option value="bachelor">Бакалавр</option>
+                                <option value="master">Магистр</option>
+                                <option value="doctor">Докторант</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label>Сонирхож буй технологиуд:</label>
+                            <label><input type="checkbox" name="skills" value="HTML"> HTML5/CSS3</label>
+                            <label><input type="checkbox" name="skills" value="JavaScript"> JavaScript</label>
+                            <label><input type="checkbox" name="skills" value="PHP"> PHP & MySQL</label>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="avatar">Профайл зураг:</label>
+                            <input type="file" id="avatar" name="avatar" accept="image/*">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="bio">Товч танилцуулга:</label>
+                            <textarea id="bio" name="bio" rows="4" placeholder="Өөрийн тухай бичнэ үү..."></textarea>
+                        </div>
+                    </fieldset>
+
+                    <div class="btn-group">
+                        <button type="submit" class="btn btn-primary">Анкет Илгээх</button>
+                        <button type="reset" class="btn btn-secondary">Дахин эхлүүлэх</button>
+                    </div>
+
+                </form>
+            </section>
+
+            <!-- Лаб 3-ын Дүнгийн хүснэгт -->
+            <section class="table-section">
+                <h2>Миний Дүнгийн Хүснэгт</h2>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Хичээлийн нэр</th>
+                                <th>Кредит</th>
+                                <th>Үнэлгээний дүн</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Вэб зохиомж</td>
+                                <td>3</td>
+                                <td><span class="badge badge-success">95 (A)</span></td>
+                            </tr>
+                            <tr>
+                                <td>Мэдээллийн сан</td>
+                                <td>3</td>
+                                <td><span class="badge badge-success">88 (B)</span></td>
+                            </tr>
+                            <tr>
+                                <td>Алгоритм ба өгөгдлийн бүтэц</td>
+                                <td>3</td>
+                                <td><span class="badge badge-success">92 (A)</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Sidebar: Сонирхол болон Бусад мэдээлэл -->
+        <aside class="sidebar">
+            
+            <div class="widget">
+                <h3>Миний сонирхол</h3>
+                <ul class="interest-list">
+                    <li>💻 Вэб хөгжүүлэлт</li>
+                    <li>📸 Фото зураг авах</li>
+                    <li>🎬 Кино ба анимэ үзэх</li>
+                    <li>🎸 Хөгжим тоглох</li>
+                </ul>
+            </div>
+
+            <div class="widget">
+                <h3>Responsive Шалгуур</h3>
+                <p>Mobile-First зарчмаар хийгдсэн бөгөөд дэлгэц агшихад утасны хувилбарт шилжинэ.</p>
+            </div>
+
+        </aside>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <p>&copy; 2026 Вэб зохиомж - Лаборатори 05.</p>
+    </footer>
+
+</body>
+</html>
