@@ -3,28 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Миний Товч CV</title>
+    <title>Ганбаяр | Мэргэжлийн Профайл</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts-оос Inter фонт ашиглах -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Үндсэн гарчиг  -->
-    <h1>Нэр: [Ганбаяр]</h1>
 
-    <!-- Товч танилцуулга -->
-    <p>Мэдээллийн системийн 2-р түвшний суралцагч. Вэб хөгжүүлэлт болон шинэ технологиудыг сонирхон судалдаг.</p>
+    <!-- Header Хэсэг (Навигаци) -->
+    <header class="main-header">
+        <div class="container flex-header">
+            <h1 class="brand">Г.</h1>
+            <nav class="nav-bar">
+                <ul>
+                    <li><a href="#about" class="active">Тухай</a></li>
+                    <li><a href="lab02.html">Лаб 2</a></li>
+                    <li><a href="lab04.html">Лаб 4</a></li>
+                    <li><a href="lab05.html">Лаб 5</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-    <h2>Эзэмшсэн чадварууд</h2>
-    <!-- Жагсаалт -->
-    <ul>
-        <li>HTML5 & CSS3 үндэс</li>
-        <li>Git & GitHub хувилбар удирдлага</li>
-        <li>Программчлалын С++ хэл</li>
-    </ul>
+    <!-- Hero / Танилцуулга Хэсэг -->
+    <section id="hero" class="hero-section">
+        <div class="container text-center">
+            <h2 class="hero-title">Нэр: Ганбаяр</h2>
+            <p class="hero-tagline">Мэдээллийн системийн 2-р түвшний суралцагч. Вэб хөгжүүлэлт болон шинэ технологиудыг сонирхон судалдаг.</p>
+        </div>
+    </section>
 
-    <h2>Холбоо барих</h2>
-    <!-- Холбоос -->
-    <p>Миний GitHub профайлтай танилцах: 
-        <a href="https://github.com/[Таны_GitHub_Нэр]" target="_blank">GitHub Холбоос</a>
-    </p>
+    <!-- Чадварууд Хэсэг -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h3 class="section-title">Эзэмшсэн чадварууд</h3>
+            <div class="skill-grid">
+                <div class="skill-card">
+                    <h4>HTML5 & CSS3 үндэс</h4>
+                    <p>Үзэмжтэй, responsive вэб хуудасны бүтэц ба загвар зохиох.</p>
+                </div>
+                <div class="skill-card">
+                    <h4>Git & GitHub хувилбар удирдлага</h4>
+                    <p>Кодын өөрчлөлтүүдийг хянах, бусадтай хамтарч ажиллах.</p>
+                </div>
+                <div class="skill-card">
+                    <h4>Программчлалын С++ хэл</h4>
+                    <p>Алгоритмын үндэс, өгөгдлийн бүтцүүдийг С++ хэл дээр хэрэгжүүлэх.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Холбоо барих ба Footer -->
+    <footer class="main-footer">
+        <div class="container text-center">
+            <h3>Холбоо барих</h3>
+            <p>Миний GitHub профайлтай танилцах:</p>
+            <a href="https://github.com/bactevirus" target="_blank" class="github-link">GitHub Холбоос</a>
+            <p class="copyright">&copy; 2026 web design - PRoFIle.</p>
+        </div>
+    </footer>
+
 </body>
 </html>
-</blockquote><fieldset></fieldset>
