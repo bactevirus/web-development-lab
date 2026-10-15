@@ -3,65 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ганбаяр | Мэргэжлийн Профайл</title>
+    <title>Ганбаяр | Software & Web Developer</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts-оос Inter фонт ашиглах -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- Header Хэсэг (Навигаци) -->
-    <header class="main-header">
-        <div class="container flex-header">
-            <h1 class="brand">Г.</h1>
-            <nav class="nav-bar">
-                <ul>
-                    <li><a href="#about" class="active">Тухай</a></li>
-                    <li><a href="lab02.html">Лаб 2</a></li>
-                    <li><a href="lab04.html">Лаб 4</a></li>
-                    <li><a href="lab05.html">Лаб 5</a></li>
+    <!-- Background Glow Effects -->
+    <div class="bg-glow blob-1"></div>
+    <div class="bg-glow blob-2"></div>
+
+    <!-- Header / Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">&lt;Ganbayar<span class="highlight">/&gt;</span></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#about" class="nav-item active">Тухай</a></li>
+                    <li><a href="#skills" class="nav-item">Чадвар</a></li>
+                    <li><a href="#labs" class="nav-item">Лабораториуд</a></li>
+                    <li><a href="#contact" class="nav-item">Холбоо барих</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero / Танилцуулга Хэсэг -->
-    <section id="hero" class="hero-section">
-        <div class="container text-center">
-            <h2 class="hero-title">Нэр: Ганбаяр</h2>
-            <p class="hero-tagline">Мэдээллийн системийн 2-р түвшний суралцагч. Вэб хөгжүүлэлт болон шинэ технологиудыг сонирхон судалдаг.</p>
-        </div>
-    </section>
+    <!-- Main Container -->
+    <main class="main-wrapper">
 
-    <!-- Чадварууд Хэсэг -->
-    <section id="skills" class="skills-section">
-        <div class="container">
-            <h3 class="section-title">Эзэмшсэн чадварууд</h3>
-            <div class="skill-grid">
-                <div class="skill-card">
-                    <h4>HTML5 & CSS3 үндэс</h4>
-                    <p>Үзэмжтэй, responsive вэб хуудасны бүтэц ба загвар зохиох.</p>
+        <!-- Hero Section -->
+        <section id="about" class="hero-section">
+            <div class="hero-content">
+                <div class="status-badge">
+                    <span class="status-dot"></span> Мэдээллийн Систем — 2-р курс
                 </div>
-                <div class="skill-card">
-                    <h4>Git & GitHub хувилбар удирдлага</h4>
-                    <p>Кодын өөрчлөлтүүдийг хянах, бусадтай хамтарч ажиллах.</p>
-                </div>
-                <div class="skill-card">
-                    <h4>Программчлалын С++ хэл</h4>
-                    <p>Алгоритмын үндэс, өгөгдлийн бүтцүүдийг С++ хэл дээр хэрэгжүүлэх.</p>
+                <h1 class="hero-title">Сайн байна уу, намайг <span class="gradient-text">Ганбаяр</span> гэдэг</h1>
+                <p class="hero-description">
+                    Би ШУТИС-ийн Мэдээллийн Системийн чиглэлээр суралцдаг ба вэб хөгжүүлэлт, С++ болон программчлалын орчин үеийн технологиудыг шимтэн судалдаг.
+                </p>
+                <div class="hero-actions">
+                    <a href="#labs" class="btn btn-primary"><i class="fa-solid fa-code"></i> Лаб Даалгаврууд</a>
+                    <a href="https://github.com/bactevirus" target="_blank" class="btn btn-secondary"><i class="fa-brands fa-github"></i> GitHub Профайл</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Холбоо барих ба Footer -->
-    <footer class="main-footer">
-        <div class="container text-center">
-            <h3>Холбоо барих</h3>
-            <p>Миний GitHub профайлтай танилцах:</p>
-            <a href="https://github.com/bactevirus" target="_blank" class="github-link">GitHub Холбоос</a>
-            <p class="copyright">&copy; 2026 web design - PRoFIle.</p>
-        </div>
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <h2 class="section-heading"><i class="fa-solid fa-laptop-code"></i> Технологийн чадварууд</h2>
+            <div class="skills-grid">
+                
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fa-brands fa-html5"></i></div>
+                    <h3>HTML5 & CSS3</h3>
+                    <p>Semantic HTML5, CSS Flexbox, Grid болон Responsive (гар утас, таблет)-д тааруулж зохиомжлох.</p>
+                    <div class="skill-tags">
+                        <span>Flexbox</span>
+                        <span>CSS Grid</span>
+                        <span>Media Queries</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fa-solid fa-code-branch"></i></div>
+                    <h3>Git & GitHub</h3>
+                    <p>Кодын хувилбар удирдлага, коммит хийх, репозитори хөтлөх болон GitHub Pages дээр деплой хийх.</p>
+                    <div class="skill-tags">
+                        <span>Git CLI</span>
+                        <span>GitHub Pages</span>
+                        <span>Version Control</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fa-solid fa-c"></i></div>
+                    <h3>C++ Programmming</h3>
+                    <p>Алгоритм, өгөгдлийн бүтэц болон объектод чиглэсэн програмчлалын (OOP) үндсүүдийг эзэмшсэн.</p>
+                    <div class="skill-tags">
+                        <span>OOP</span>
+                        <span>Algorithms</span>
+                        <span>Data Structures</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Lab Work Showcase Section -->
+        <section id="labs" class="section">
+            <h2 class="section-heading"><i class="fa-solid fa-folder-open"></i> Вэб зохиомж — Лабораторийн ажлууд</h2>
+            <div class="labs-grid">
+
+                <a href="lab02.html" class="lab-card">
+                    <div class="lab-header">
+                        <span class="lab-badge">Лаб 02</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </div>
+                    <h3>Semantic HTML & Form</h3>
+                    <p>Семантик HTML бүтэц, хэрэглэгчийн анкетын форм, жагсаалт болон хүснэгтийн бүтэц.</p>
+                </a>
+
+                <a href="lab04.html" class="lab-card">
+                    <div class="lab-header">
+                        <span class="lab-badge">Лаб 04</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </div>
+                    <h3>Flexbox & Grid Layout</h3>
+                    <p>CSS Flexbox болон CSS Grid ашиглан вэбийн бүтэн макет (Header, Main, Sidebar, Footer) зохиох.</p>
+                </a>
+
+                <a href="lab05.html" class="lab-card">
+                    <div class="lab-header">
+                        <span class="lab-badge">Лаб 05</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </div>
+                    <h3>Responsive Static Page</h3>
+                    <p>Mobile-First зарчим, Media Queries ба дэлгэцийн хэмжээнд уян хатан зохицох вэб хуудас.</p>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="contact-box">
+                <h2>Хамтран ажиллах & Холбоо барих</h2>
+                <p>Намтар, лабораторийн ажлууд болон бусад төслүүдийг GitHub дээрээс үзэх боломжтой.</p>
+                <div class="social-links">
+                    <a href="https://github.com/bactevirus" target="_blank" class="social-btn"><i class="fa-brands fa-github"></i> GitHub</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Ганбаяр. Бүх эрх хуулиар хамгаалагдсан.</p>
     </footer>
 
 </body>
