@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лаб 06: Зургийн цомог портал & Animation</title>
+    <link rel="stylesheet" href="style06.css">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="">
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <!-- Inline SVG Logo -->
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                <span>Gallery Portal</span>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Нүүр</a></li>
+                    <li><a href="lab05.html">Лаб 05</a></li>
+                    <li><a href="#gallery" class="active">Цомог</a></li>
+                    <li><a href="#multimedia">Мультимедиа</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Wrapper -->
+    <main class="main-wrapper">
+
+        <!-- 1. Gallery Section (3D Flip Cards & Stagger Animation) -->
+        <section id="gallery" class="section">
+            <h2 class="section-heading"><i class="fa-solid fa-images"></i> Зургийн Цомог (3D Flip Cards)</h2>
+            
+            <div class="gallery-grid">
+                <!-- Card 1 -->
+                <div class="flip-card" style="--i: 1;">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="https://picsum.photos/id/10/400/300" alt="Зураг 1">
+                            <h3>Байгаль 1</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Байгалийн сайхан</h3>
+                            <p>Огноо: 2026.10.22</p>
+                            <p>Байршил: Улаанбаатар</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="flip-card" style="--i: 2;">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="https://picsum.photos/id/20/400/300" alt="Зураг 2">
+                            <h3>Байгаль 2</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Ой мод</h3>
+                            <p>Огноо: 2026.10.22</p>
+                            <p>Байршил: Хөвсгөл</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="flip-card" style="--i: 3;">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="https://picsum.photos/id/30/400/300" alt="Зураг 3">
+                            <h3>Хот</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Гэрэлт хот</h3>
+                            <p>Огноо: 2026.10.22</p>
+                            <p>Байршил: Сөүл</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Multimedia Section (Video & Iframe) -->
+        <section id="multimedia" class="section">
+            <h2 class="section-heading"><i class="fa-solid fa-video"></i> Мультимедиа болон Газрын зураг</h2>
+            
+            <div class="multimedia-grid">
+                <!-- Video Container -->
+                <div class="media-box">
+                    <h3>Танилцуулга видео</h3>
+                    <video controls poster="https://picsum.photos/id/40/600/400">
+                        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                        <track src="subtitles_mn.vtt" kind="subtitles" srclang="mn" label="Монгол" default>
+                        Таны браузер видео дэмжихгүй байна.
+                    </video>
+                </div>
+
+                <!-- Google Map Iframe -->
+                <div class="media-box">
+                    <h3>Байршил (Iframe)</h3>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2674.4!2d106.9!3d47.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDfCsDU0JzAwLjAiTiAxMDbCsDU0JzAwLjAiRQ!5e0!3m2!1sen!2smn!4v1234567890" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Ганбаяр. Лаб 06 Animation & Multimedia.</p>
+    </footer>
+
+</body>
+</html>
