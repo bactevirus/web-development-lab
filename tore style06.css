@@ -1,0 +1,22 @@
+[1mdiff --git a/style06.css b/style06.css[m
+[1mindex 0c8f4a0..c4a93a8 100644[m
+[1m--- a/style06.css[m
+[1m+++ b/style06.css[m
+[36m@@ -218,7 +218,7 @@[m [mbody {[m
+ }[m
+ [m
+ /* --- Multimedia Grid --- */[m
+[31m-.multimedia-grid {[m
+[32m+[m[32m.multimedia-grid {[m[41m  [m
+     display: grid;[m
+     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));[m
+     gap: 2rem;[m
+[36m@@ -254,7 +254,7 @@[m [mbody {[m
+     color: var(--text-muted);[m
+     font-size: 0.9rem;[m
+     margin-top: 4rem;[m
+[31m-}[m
+[32m+[m[32m}[m[41m [m
+ [m
+ /* --- LAB 5: Responsive Media Queries --- */[m
+ @media (max-width: 768px) {[m

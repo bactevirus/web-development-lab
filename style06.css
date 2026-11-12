@@ -218,7 +218,7 @@ body {
 }
 
 /* --- Multimedia Grid --- */
-.multimedia-grid {
+.multimedia-grid {  
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
@@ -254,7 +254,7 @@ body {
     color: var(--text-muted);
     font-size: 0.9rem;
     margin-top: 4rem;
-}
+} 
 
 /* --- LAB 5: Responsive Media Queries --- */
 @media (max-width: 768px) {
