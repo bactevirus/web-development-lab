@@ -1,0 +1,15 @@
+@use 'sass:math';
+
+// px-ийг rem рүү шилжүүлэх функц
+@function rem($px) {
+  @return math.div($px, 16px) * 1rem;
+}
+
+// Контраст өнгө тодорхойлох функц
+@function contrast($color) {
+  @if (lightness($color) > 50) {
+    @return #090d16;
+  } @else {
+    @return #f9fafb;
+  }
+}

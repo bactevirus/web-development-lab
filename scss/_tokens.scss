@@ -1,0 +1,27 @@
+@use "sass:map";
+
+$colors: (
+  "bg-color": #090d16,
+  "card-bg": #111827,
+  "border-color": rgba(255, 255, 255, 0.1),
+  "text-main": #f9fafb,
+  "text-muted": #9ca3af,
+  "accent-blue": #38bdf8,
+  "accent-purple": #818cf8
+);
+
+$radii: (
+  "default": 14px
+);
+
+$breakpoints: (
+  "tablet": 768px
+);
+
+:root {
+  @each $name, $value in $colors {
+    --#{$name}: #{$value};
+  }
+
+  --radius: #{map.get($radii, "default")};
+}

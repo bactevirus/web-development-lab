@@ -1,0 +1,12 @@
+{
+  "name": "web-development-lab",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "sass:build": "sass --style=compressed --no-source-map scss/main.scss style07.min.css",
+    "sass:watch": "sass --watch --style=compressed scss/main.scss:style07.min.css"
+  },
+  "devDependencies": {
+    "sass": "^1.108.2"
+  }
+}
