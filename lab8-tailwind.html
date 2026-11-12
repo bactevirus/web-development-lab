@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="mn" data-theme="dark">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lab 8 · Tailwind Ёоёоны цомог</title>
+    <link rel="stylesheet" href="tailwind-output.css">
+</head>
+<body class="min-h-screen bg-slate-100 text-slate-900 transition-colors dark:bg-slate-950 dark:text-slate-100">
+    <nav class="border-b border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900">
+        <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-4 py-4">
+            <a class="font-bold text-brand" href="lab6.html">Ganbayar · Ёоёо</a>
+            <button class="rounded-lg border border-slate-300 px-3 py-2 md:hidden"
+                    id="menuToggle" type="button" aria-expanded="false">Цэс ☰</button>
+            <div class="hidden w-full flex-col gap-3 md:flex md:w-auto md:flex-row md:items-center" id="navMenu">
+                <a class="hover:text-brand" href="lab6.html">Lab 6/7</a>
+                <a class="hover:text-brand" href="lab8-bootstrap.html">Bootstrap</a>
+                <a class="hover:text-brand" href="lab8-tailwind.html">Tailwind</a>
+                <button class="rounded-lg bg-brand px-4 py-2 font-semibold text-slate-950"
+                        id="themeToggle" type="button">☀️ / 🌙 Горим</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="mx-auto max-w-7xl px-4 py-10">
+        <header class="mb-10 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900 md:p-10">
+            <p class="mb-2 text-sm font-bold uppercase tracking-widest text-brand">Lab 8 · Tailwind CSS</p>
+            <h1 class="text-4xl font-black tracking-tight md:text-5xl">Мэргэжлийн ёоёоны цомог</h1>
+            <p class="mt-4 max-w-2xl text-slate-600 dark:text-slate-300">
+                Tailwind ашиглан байгуулсан responsive бүтээгдэхүүний цомог.
+            </p>
+        </header>
+
+        <section class="mb-12">
+            <div class="mb-5">
+                <p class="text-sm font-bold uppercase tracking-widest text-brand">Бүтээгдэхүүн</p>
+                <h2 class="text-3xl font-bold">Ёоёоны загварууд</h2>
+            </div>
+            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3" id="gallery"></div>
+        </section>
+
+        <section id="contact" class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900 md:p-8">
+            <h2 class="text-2xl font-bold">Үнэ асуух</h2>
+            <p class="mt-2 text-slate-600 dark:text-slate-300">Формын талбаруудыг бөглөж шалгаарай.</p>
+            <form class="mt-6 grid gap-4 md:grid-cols-2" id="contactForm">
+                <label class="grid gap-2 font-medium">
+                    Нэр
+                    <input class="rounded-lg border border-slate-300 bg-transparent px-3 py-2 dark:border-slate-700"
+                           name="name" required minlength="2">
+                </label>
+                <label class="grid gap-2 font-medium">
+                    Имэйл
+                    <input class="rounded-lg border border-slate-300 bg-transparent px-3 py-2 dark:border-slate-700"
+                           name="email" type="email" required>
+                </label>
+                <label class="grid gap-2 font-medium md:col-span-2">
+                    Мессеж
+                    <textarea class="rounded-lg border border-slate-300 bg-transparent px-3 py-2 dark:border-slate-700"
+                              name="message" rows="3" required></textarea>
+                </label>
+                <div class="md:col-span-2">
+                    <button class="rounded-lg bg-brand px-5 py-3 font-bold text-slate-950" type="submit">Илгээх</button>
+                    <span class="ml-3 text-sm" id="formMessage" role="status"></span>
+                </div>
+            </form>
+        </section>
+
+        <footer class="mt-10 flex flex-wrap justify-between gap-3 border-t border-slate-300 pt-5 dark:border-slate-800">
+            <a class="text-brand" href="lab6.html">← Lab 6/7 руу буцах</a>
+            <a class="text-brand" href="lab8-bootstrap.html">Bootstrap хувилбар →</a>
+        </footer>
+    </main>
+
+    <script>
+        const products = [
+            ["Мэргэжлийн Yoyo", "yoyo1.png", "₮180,000", "Удаан эргэлт, string trick-д тохиромжтой."],
+            ["Carbon Yoyo", "yoyo2.png", "₮250,000", "Хөнгөн хийцтэй, хурдан хөдөлгөөнд зориулав."],
+            ["Titanium Yoyo", "yoyo3.png", "₮300,000", "Нарийн удирдлага, урт эргэлтэд тохирно."],
+            ["Aether Pro", "yoyo4.png", "₮350,000", "Гөлгөр эргэлттэй мэргэжлийн загвар."],
+            ["Prism X", "yoyo5.png", "₮300,000", "Өнгөлөг хийц, удаан эргэлттэй."],
+            ["Titan Elite", "yoyo6.png", "₮320,000", "Металл хийцтэй, тогтвортой удирдлагатай."],
+            ["Aurora", "yoyo7.png", "₮280,000", "Өнгөлөг дизайн, бэлтгэлд тохиромжтой."],
+            ["Shadow Pro", "yoyo8.png", "₮270,000", "Олон төрлийн trick хийхэд зориулав."],
+            ["Nova X", "yoyo9.png", "₮290,000", "Хөнгөн, тэнцвэртэй хийцтэй."]
+        ];
+
+        document.querySelector("#gallery").innerHTML = products.map(([name, image, price, info]) => `
+            <article class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-900">
+                <img class="h-56 w-full bg-zinc-100 object-contain" src="img/${image}" alt="${name}" loading="lazy">
+                <div class="p-5">
+                    <h3 class="text-xl font-bold">${name}</h3>
+                    <p class="mt-2 font-bold text-brand">${price}</p>
+                    <p class="mt-2 min-h-12 text-slate-600 dark:text-slate-300">${info}</p>
+                    <a class="mt-4 inline-block rounded-lg bg-brand px-4 py-2 font-semibold text-slate-950" href="#contact">Дэлгэрэнгүй асуух</a>
+                </div>
+            </article>
+        `).join("");
+
+        const themeToggle = document.querySelector("#themeToggle");
+        themeToggle.addEventListener("click", () => {
+            const html = document.documentElement;
+            html.dataset.theme = html.dataset.theme === "dark" ? "light" : "dark";
+        });
+
+        document.querySelector("#menuToggle").addEventListener("click", (event) => {
+            const menu = document.querySelector("#navMenu");
+            menu.classList.toggle("hidden");
+            event.currentTarget.setAttribute("aria-expanded", String(!menu.classList.contains("hidden")));
+        });
+
+        document.querySelector("#contactForm").addEventListener("submit", (event) => {
+            event.preventDefault();
+            const form = event.currentTarget;
+
+            if (!form.reportValidity()) return;
+
+            document.querySelector("#formMessage").textContent = "Формын шалгалт амжилттай.";
+            form.reset();
+        });
+    </script>
+</body>
+</html>

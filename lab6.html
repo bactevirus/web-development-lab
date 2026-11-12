@@ -6,9 +6,11 @@
     <title>Лаб 06: Мэргэжлийн Ёоёо</title>
 
     <link rel="stylesheet" href="style07.min.css">
+<link rel="stylesheet" href="lab-controls.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+<script src="lab-controls.js"></script>
 <body>
 
     <header class="navbar">
@@ -93,7 +95,7 @@
                 <div class="flip-card" style="--i: 4;">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
-                            <img src="img/yoyo4.jfif" alt="Aether Pro ёоёо">
+                            <img src="img/yoyo4.png" alt="Aether Pro ёоёо">
                             <h3>Aether Pro</h3>
                         </div>
                         <div class="flip-card-back">
@@ -108,7 +110,7 @@
                 <div class="flip-card" style="--i: 5;">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
-                            <img src="img/yoyo5.jfif" alt="Prism X ёоёо">
+                            <img src="img/yoyo5.png" alt="Prism X ёоёо">
                             <h3>Prism X</h3>
                         </div>
                         <div class="flip-card-back">
@@ -123,7 +125,7 @@
                 <div class="flip-card" style="--i: 6;">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
-                            <img src="img/yoyo6.jfif" alt="Titan Elite ёоёо">
+                            <img src="img/yoyo6.png" alt="Titan Elite ёоёо">
                             <h3>Titan Elite</h3>
                         </div>
                         <div class="flip-card-back">
@@ -138,7 +140,7 @@
                 <div class="flip-card" style="--i: 7;">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
-                            <img src="img/yoyo7.jfif" alt="Aurora ёоёо">
+                            <img src="img/yoyo7.png" alt="Aurora ёоёо">
                             <h3>Aurora</h3>
                         </div>
                         <div class="flip-card-back">
@@ -153,7 +155,7 @@
                 <div class="flip-card" style="--i: 8;">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
-                            <img src="img/yoyo8.jfif" alt="Shadow Pro ёоёо">
+                            <img src="img/yoyo8.png" alt="Shadow Pro ёоёо">
                             <h3>Shadow Pro</h3>
                         </div>
                         <div class="flip-card-back">
@@ -168,7 +170,7 @@
                 <div class="flip-card" style="--i: 9;">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
-                            <img src="img/yoyo9.jfif" alt="Nova X ёоёо">
+                            <img src="img/yoyo9.png" alt="Nova X ёоёо">
                             <h3>Nova X</h3>
                         </div>
                         <div class="flip-card-back">
@@ -213,6 +215,25 @@
     <footer class="footer">
         <p>&copy; 2026 Ганбаяр — Лабораторийн ажил.</p>
     </footer>
+<div class="lab-toolbar" id="labToolbar">
+    <div class="lab-toolbar__links">
+        <a href="lab8-bootstrap.html">Lab 8 · Bootstrap</a>
+        <a href="lab8-tailwind.html">Lab 8 · Tailwind</a>
+    </div>
 
+    <div class="lab-toolbar__controls">
+        <button type="button" id="themeToggle">☀️ / 🌙 Горим</button>
+        <button type="button" data-preview="390">Утас</button>
+        <button type="button" data-preview="768">Таблет</button>
+        <button type="button" data-preview="1100">Нөүтбүүк</button>
+    </div>
+</div>
+
+<section class="device-preview" id="devicePreview" hidden>
+    <button type="button" class="device-preview__close" id="closePreview">Хаах ✕</button>
+    <iframe id="previewFrame" title="Төхөөрөмжийн preview"></iframe>
+</section>
+
+<script src="lab-controls.js"></script>
 </body>
 </html>

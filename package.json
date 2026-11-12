@@ -2,11 +2,14 @@
   "name": "web-development-lab",
   "version": "1.0.0",
   "private": true,
-  "scripts": {
-    "sass:build": "sass --style=compressed --no-source-map scss/main.scss style07.min.css",
-    "sass:watch": "sass --watch --style=compressed scss/main.scss:style07.min.css"
-  },
+ "scripts": {
+  "sass:build": "sass --style=compressed --no-source-map scss/main.scss style07.min.css",
+  "sass:watch": "sass --watch --style=compressed scss/main.scss:style07.min.css",
+  "tailwind:build": "npx @tailwindcss/cli -i ./src/tailwind.css -o ./tailwind-output.css --minify"
+},
   "devDependencies": {
-    "sass": "^1.108.2"
+    "@tailwindcss/cli": "^4.3.5",
+    "sass": "^1.108.2",
+    "tailwindcss": "^4.3.5"
   }
 }
