@@ -42,6 +42,6 @@ async function loadWeather() {
 }
 
 form.addEventListener("submit", event => {
-    event.preventDefault() ;
+    event.preventDefault() ``;
     loadWeather();
 });
