@@ -1,66 +1,148 @@
 <!doctype html>
-<html lang="mn">
+<html lang="mn" data-bs-theme="dark">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Lab 8 · Харьцуулалт</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lab 8 · Bootstrap ба Tailwind харьцуулалт</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { min-height: 100vh; }
+        .brand { color: #38bdf8; }
+        .hero { border: 1px solid var(--bs-border-color); }
+    </style>
 </head>
-<body class="bg-body-tertiary">
-  <main class="container py-5">
-    <h1 class="mb-3">Bootstrap ба Tailwind CSS-ийн харьцуулалт</h1>
-    <p class="text-body-secondary">
-      CSS-ийн хэмжээг framework-ийн stylesheet-ээр, картын class тоог нэг картын
-      үндсэн element дээрх class-аар тооцов. Lighthouse-ийг ижил төхөөрөмж,
-      ижил нөхцөлөөр хэмжинэ.
-    </p>
-
-    <div class="table-responsive">
-      <table class="table table-bordered table-striped align-middle">
-        <thead class="table-dark">
-          <tr>
-            <th>Үзүүлэлт</th>
-            <th>Bootstrap</th>
-            <th>Tailwind CSS</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th>CSS файлын хэмжээ</th>
-            <td>___ KB</td>
-            <td>___ KB</td>
-          </tr>
-          <tr>
-            <th>Нэг картын үндсэн element-ийн class тоо</th>
-            <td>4</td>
-            <td>11</td>
-          </tr>
-          <tr>
-            <th>Lighthouse Performance (Mobile)</th>
-            <td>___ / 100</td>
-            <td>___ / 100</td>
-          </tr>
-          <tr>
-            <th>Lighthouse Accessibility</th>
-            <td>___ / 100</td>
-            <td>___ / 100</td>
-          </tr>
-        </tbody>
-      </table>
+<body>
+<nav class="navbar navbar-expand-lg border-bottom sticky-top bg-body">
+    <div class="container">
+        <a class="navbar-brand fw-bold brand" href="lab6.html">Ganbayar · Lab 8</a>
+        <div class="navbar-nav ms-auto">
+            <a class="nav-link" href="lab8-bootstrap.html">Bootstrap</a>
+            <a class="nav-link" href="lab8-tailwind.html">Tailwind</a>
+            <a class="nav-link active" href="lab8-comparison.html">Харьцуулалт</a>
+        </div>
     </div>
+</nav>
 
-    <h2 class="h4 mt-4">Дүгнэлт</h2>
-    <p>
-      Миний хэмжилтээр ______ хувилбарын CSS хэмжээ бага байсан.
-      Bootstrap-ийн class-ууд ______, Tailwind-ийн utility class-ууд ______ байв.
-      Lighthouse-ийн үр дүнгээр ______ хувилбар ______ үзүүлэлтээр давуу байсан.
-    </p>
+<main class="container py-5">
+    <header class="hero rounded-4 bg-body-tertiary p-4 p-md-5 mb-5">
+        <p class="brand text-uppercase fw-bold small">Лабораторийн ажил 8</p>
+        <h1 class="display-6 fw-bold">Bootstrap ба Tailwind CSS</h1>
+        <p class="lead text-body-secondary mb-0">
+            Хоёр framework-ээр хийсэн ижил ёоёоны цомгийг бүтэц, хөгжүүлэлтийн арга,
+            Lighthouse-ийн хэмжилтээр харьцуулав.
+        </p>
+    </header>
 
-    <nav class="d-flex flex-wrap gap-3 mt-4" aria-label="Лабораторийн холбоосууд">
-      <a href="lab8-bootstrap.html">Bootstrap хуудас</a>
-      <a href="lab8-tailwind.html">Tailwind хуудас</a>
-      <a href="lab6.html">Lab 6/7 хуудас</a>
-    </nav>
-  </main>
+    <section class="mb-5">
+        <h2 class="h3 mb-3">Үндсэн ялгаа</h2>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped table-hover align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">Үзүүлэлт</th>
+                        <th scope="col">Bootstrap</th>
+                        <th scope="col">Tailwind CSS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Ажиллах арга</th>
+                        <td>Урьдчилан бэлдсэн component болон utility class ашиглана.</td>
+                        <td>Utility class-уудаар элемент бүрийн загварыг HTML дээр шууд тодорхойлно.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Хөгжүүлэлтийн хурд</th>
+                        <td>Navbar, button, form зэрэг түгээмэл component хурдан угсарна.</td>
+                        <td>Загварыг нарийн тохируулна; эхэндээ олон class бичих шаардлагатай.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Загварын уян хатан байдал</th>
+                        <td>Bootstrap-ийн үндсэн хэв маяг давамгайлна; өөрчлөхдөө нэмэлт CSS хэрэглэж болно.</td>
+                        <td>Өнгө, зай, хэмжээ, breakpoint-ийг utility болон theme-ээр нарийн тохируулна.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Responsive дизайн</th>
+                        <td>Grid болон responsive class-ууд ашиглана.</td>
+                        <td>Breakpoint prefix, жишээ нь <code>sm:</code>, <code>md:</code>, <code>lg:</code> ашиглана.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Нэг картын class тоо</th>
+                        <td>4 — картын үндсэн element дээрх class-ууд.</td>
+                        <td>11 — картын үндсэн element дээрх class-ууд.</td>
+                    </tr>
+                    <tr>
+    <th scope="row">Framework CSS хэмжээ</th>
+    <td><strong>232.6 KB</strong> — Bootstrap 5.3.3 CDN</td>
+    <td><strong>Бодитоор хэмжсэн tailwind-output.css</strong></td>
+</tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="small text-body-secondary">
+            Class-ын тоо нь одоогийн хуудсын нэг картын үндсэн элемент дээрх class-уудыг тоолсон
+            жишээ. HTML-ээ өөрчилсөн бол өөрийн хувилбараас дахин тоол.
+        </p>
+    </section>
+
+    <section class="mb-5">
+        <h2 class="h3 mb-3">Lighthouse хэмжилт</h2>
+        <p class="text-body-secondary">
+            Bootstrap болон Tailwind хуудсыг ижил browser, төхөөрөмжийн горим, сүлжээний нөхцөлд
+            тус тус шалгаж, Lighthouse-ийн гаргасан оноог энд оруулна. Доорх хоосон утгуудыг
+            өөрийн бодит үр дүнгээр солино.
+        </p>
+        <div class="table-responsive">
+            <table class="table table-bordered align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">Lighthouse үзүүлэлт</th>
+                        <th scope="col">Bootstrap</th>
+                        <th scope="col">Tailwind CSS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+    <th scope="row">Performance</th>
+    <td>88 / 100</td>
+    <td>88 / 100</td>
+</tr>
+<tr>
+    <th scope="row">Accessibility</th>
+    <td>100 / 100</td>
+    <td>100 / 100</td>
+</tr>
+<tr>
+    <th scope="row">Best Practices</th>
+    <td>92 / 100</td>
+    <td>92 / 100</td>
+</tr>
+<tr>
+    <th scope="row">SEO</th>
+    <td>91 / 100</td>
+    <td>91 / 100</td>
+</tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="rounded-4 border bg-body-tertiary p-4">
+        <h2 class="h3">Дүгнэлт</h2>
+        <p class="mb-0">
+            Bootstrap нь бэлэн component, grid, form validation-тай тул түгээмэл интерфэйсийг
+            хурдан бүтээхэд тохиромжтой. Tailwind нь utility class болон theme тохиргоогоор
+            загварыг илүү нарийн өөрчлөх боломж олгодог ч HTML дээр class олон болдог.
+            Миний Lighthouse хэмжилтээр __________ хуудсын Performance ______, Accessibility
+            ______, Best Practices ______, SEO ______ оноо авсан. Энэ туршилтаар
+            __________ хувилбар миний шаардлагад илүү тохирсон, учир нь __________.
+        </p>
+    </section>
+
+    <footer class="d-flex flex-wrap gap-3 justify-content-between border-top mt-5 pt-4">
+        <a href="lab8-bootstrap.html">← Bootstrap хуудас</a>
+        <a href="lab8-tailwind.html">Tailwind хуудас →</a>
+        <a href="lab6.html">Lab 6/7</a>
+    </footer>
+</main>
 </body>
 </html>
