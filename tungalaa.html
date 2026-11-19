@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f7f2">
+    <meta name="description" content="Тунгалаг — гэр, албан байгууллагын ус цэвэршүүлэх систем, шүүлтүүрийн шийдэл.">
+    <title>Тунгалаг — Ус бол амьдралын эхлэл</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="tungalaa.css">
+</head>
+<body>
+    <div class="topline">
+        <p>Улаанбаатар хотод <strong>99,000₮-с дээш</strong> захиалга хүргэлт үнэгүй</p>
+        <a href="#contact">Зөвлөгөө авах <span>↗</span></a>
+    </div>
+
+    <header class="header">
+        <a class="wordmark" href="#" aria-label="Тунгалаг нүүр хуудас">
+            <span class="logo-drop" aria-hidden="true">
+                <svg viewBox="0 0 34 40"><path d="M17 1C12 10 3 19 3 27a14 14 0 0028 0C31 19 22 10 17 1z"/><path d="M11 27c0 4 2.7 7 6.5 7" class="drop-glint"/></svg>
+            </span>
+            <span>тунгалаг<span class="wordmark-dot">.</span></span>
+        </a>
+        <nav class="main-nav" aria-label="Үндсэн цэс">
+            <a href="#shop">Бүтээгдэхүүн</a>
+            <a href="#solutions">Шийдлүүд</a>
+            <a href="#story">Бидний тухай</a>
+            <a href="#contact">Холбоо барих</a>
+        </nav>
+        <div class="header-actions">
+            <button class="search-toggle" id="searchToggle" aria-label="Хайх">
+                <svg viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg>
+            </button>
+            <button class="cart-trigger" id="cartTrigger" aria-label="Сагс нээх">
+                <svg viewBox="0 0 24 24"><path d="M3 4h2l2.2 11.2h10.5L20 8H7"/><circle cx="9.5" cy="19" r="1.3"/><circle cx="17" cy="19" r="1.3"/></svg>
+                <span>Сагс</span><b id="cartCount">0</b>
+            </button>
+            <button class="menu-toggle" id="menuToggle" aria-label="Цэс нээх" aria-expanded="false"><span></span><span></span></button>
+        </div>
+        <form class="search-panel" id="searchPanel" role="search">
+            <input id="searchInput" type="search" placeholder="Бүтээгдэхүүн хайх..." aria-label="Бүтээгдэхүүн хайх">
+            <button type="submit">Хайх <span>↗</span></button>
+        </form>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-image" role="img" aria-label="Голын цэнгэг урсгал"></div>
+            <div class="hero-shade"></div>
+            <div class="hero-content">
+                <p class="eyebrow hero-eyebrow"><span></span> ЦЭВЭР УСНЫ ШИНЭ СОЁЛ</p>
+                <h1>Ус бол<br>амьдралын<br><em>эхлэл.</em></h1>
+                <p class="hero-copy">Гэр бүлдээ зориулж байгальд ойр, цэвэр усны шийдлийг сонгоорой.</p>
+                <a class="button button-light" href="#shop">Шийдлээ олох <span>↗</span></a>
+            </div>
+            <div class="hero-bottom">
+                <span>48°01'12.0"N&nbsp; 106°55'12.0"E</span>
+                <span class="hero-index">01 <i></i> 04</span>
+                <span>ЦЭНГЭГИЙГ ӨДӨР БҮР</span>
+            </div>
+            <a class="scroll-cue" href="#solutions" aria-label="Доош гүйлгэх"><span></span></a>
+            <div class="hero-stamp"><span>ЦЭВЭР</span><b>H₂O</b><span>АМЬДРАЛ</span></div>
+        </section>
+
+        <section class="intro section-wrap" id="solutions">
+            <div class="intro-label reveal"><span class="section-number">01 /</span> БИДНИЙ ШИЙДЭЛ</div>
+            <div class="intro-main reveal">
+                <h2>Цэвэр ус бол<br>тансаглал биш.<br><em>Өдөр тутмын сонголт.</em></h2>
+                <div class="intro-aside">
+                    <p>Усны чанар, хэрэглээ бүр өөр. Танд тохирох шүүлтүүрийг мэргэжлийн зөвлөгөө, найдвартай бүтээгдэхүүнээр шийдье.</p>
+                    <a class="text-link" href="#shop">Шийдлүүдтэй танилцах <span>↗</span></a>
+                </div>
+            </div>
+            <div class="stats-row reveal">
+                <div><strong data-count="12">0</strong><span>жилийн туршлага</span></div>
+                <div><strong data-count="4800">0</strong><span>сэтгэл хангалуун гэр бүл</span></div>
+                <div><strong>24/7</strong><span>цэвэр усны хэрэглээ</span></div>
+            </div>
+        </section>
+
+        <section class="category-section">
+            <div class="section-wrap">
+                <div class="section-head reveal">
+                    <div><p class="eyebrow">ХЭРЭГЦЭЭНД ТАНЬ</p><h2>Яг тохирох<br><em>шийдэл.</em></h2></div>
+                    <p class="section-note">Та юунд зориулж цэвэр ус хайж байна вэ?</p>
+                </div>
+                <div class="category-grid">
+                    <a class="category-card category-home reveal" href="#shop" data-category="home">
+                        <div class="category-photo"></div><span class="category-number">01</span>
+                        <div class="category-info"><div><span>ӨДӨР ТУТМЫН ХЭРЭГЛЭЭ</span><h3>Гэрийн ус</h3></div><b>↗</b></div>
+                    </a>
+                    <a class="category-card category-drink reveal" href="#shop" data-category="drink">
+                        <div class="category-photo"></div><span class="category-number">02</span>
+                        <div class="category-info"><div><span>АМТ, ҮНЭРГҮЙ ТУНГАЛАГ</span><h3>Ундны ус</h3></div><b>↗</b></div>
+                    </a>
+                    <a class="category-card category-replace reveal" href="#shop" data-category="replacement">
+                        <div class="category-photo"></div><span class="category-number">03</span>
+                        <div class="category-info"><div><span>ТОГТМОЛ АРЧИЛГАА</span><h3>Шүүлтүүр, сэлбэг</h3></div><b>↗</b></div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="shop-section section-wrap" id="shop">
+            <div class="shop-heading reveal">
+                <div><p class="eyebrow">СОНГОЛТТОЙ ТАНИЛЦ</p><h2>Онцлох <em>бүтээгдэхүүн.</em></h2></div>
+                <div class="shop-controls">
+                    <label class="sr-only" for="sortSelect">Бүтээгдэхүүн эрэмбэлэх</label>
+                    <select id="sortSelect">
+                        <option value="featured">Онцлох</option>
+                        <option value="low">Үнэ: багаас их</option>
+                        <option value="high">Үнэ: ихээс бага</option>
+                    </select>
+                </div>
+            </div>
+            <div class="product-grid" id="productGrid"></div>
+            <div class="shop-bottom"><span id="productCount">Бүх бүтээгдэхүүн</span><a class="text-link" href="#shop">Бүх бүтээгдэхүүн <span>↗</span></a></div>
+        </section>
+
+        <section class="manifesto" id="story">
+            <div class="manifesto-image reveal"><span class="image-caption">БАЙГАЛЬ · ЭХ ҮҮСВЭР</span></div>
+            <div class="manifesto-copy reveal">
+                <p class="eyebrow">БАЙГАЛИАС УРАМШИВ</p>
+                <h2>Ус бүрийн<br>цаана <em>амьдрал.</em></h2>
+                <p>Бид усны үнэ цэнийг мэдэрч өссөн. Тиймээс айл бүрт хэрэгцээнд нь нийцсэн, удаан эдэлгээтэй шүүлтүүрийн шийдэл хүргэхийг зорьдог.</p>
+                <a class="text-link" href="#contact">Бидний түүх <span>↗</span></a>
+                <span class="manifesto-mark" aria-hidden="true">Т.</span>
+            </div>
+        </section>
+
+        <section class="contact-section section-wrap" id="contact">
+            <div class="contact-copy reveal"><p class="eyebrow">ХАМТДАА ШИЙДЬЕ</p><h2>Таны ус.<br><em>Бидний зөвлөгөө.</em></h2><p>Хэрэгцээгээ хэлээрэй. Танд тохирох системийг хамтдаа олъё.</p></div>
+            <form class="contact-form reveal" id="contactForm">
+                <label for="contactName">Таны нэр</label>
+                <input id="contactName" name="name" placeholder="Нэрээ бичнэ үү" required minlength="2">
+                <label for="contactPhone">Утасны дугаар</label>
+                <input id="contactPhone" name="phone" type="tel" placeholder="9911 2233" pattern="[0-9 +()-]{8,15}" required>
+                <button class="button button-dark" type="submit">Зөвлөгөө авах <span>↗</span></button>
+                <p id="formMessage" class="form-message" aria-live="polite"></p>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <a class="wordmark footer-mark" href="#"><span class="logo-drop" aria-hidden="true"><svg viewBox="0 0 34 40"><path d="M17 1C12 10 3 19 3 27a14 14 0 0028 0C31 19 22 10 17 1z"/><path d="M11 27c0 4 2.7 7 6.5 7" class="drop-glint"/></svg></span><span>тунгалаг<span class="wordmark-dot">.</span></span></a>
+        <span>ЦЭВЭР УС · ЦЭНГЭГ АМЬДРАЛ</span><span>© 2026 Тунгалаг</span>
+    </footer>
+
+    <div class="drawer-scrim" id="drawerScrim"></div>
+    <aside class="cart-drawer" id="cartDrawer" aria-hidden="true" aria-label="Худалдан авах сагс">
+        <div class="drawer-head"><div><span class="eyebrow">ТАНЫ СОНГОЛТ</span><h2>Сагс <span id="drawerCount">(0)</span></h2></div><button id="closeDrawer" aria-label="Сагс хаах">×</button></div>
+        <ul class="drawer-items" id="cartItems"></ul>
+        <div class="drawer-foot"><div class="subtotal"><span>Нийт дүн</span><strong id="cartTotal">0₮</strong></div><button class="button button-dark" id="checkoutButton">Захиалгаа үргэлжлүүлэх <span>↗</span></button><button class="clear-cart" id="clearCart">Сагс хоослох</button></div>
+    </aside>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="tungalaa.js"></script>
+</body>
+</html>
