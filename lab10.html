@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 10 · API Web Application</title>
+    <link rel="stylesheet" href="style07.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a class="logo" href="lab6.html">Ganbayar · Lab 10</a>
+            <ul class="nav-links">
+                <li><a href="lab6.html">Lab 6/7</a></li>
+                <li><a href="lab8-bootstrap.html">Bootstrap</a></li>
+                <li><a href="lab8-tailwind.html">Tailwind</a></li>
+                <li><a href="lab8-comparison.html">Харьцуулалт</a></li>
+                <li><a href="lab9.html">Lab 9</a></li>
+                <li><a href="lab10.html" class="active">Lab 10</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-wrapper">
+        <section class="hero-banner">
+            <h1>Ёоёоны Weather App</h1>
+            <p>
+                Open-Meteo API ашиглан хотын цаг агаарын
+                одоогийн байдал болон 7 хоногийн төлөвийг харуулна.
+            </p>
+        </section>
+
+        <section class="lab10-app" aria-labelledby="weatherTitle">
+            <h2 id="weatherTitle">Хотын цаг агаар</h2>
+
+            <form id="weatherForm">
+                <label for="citySelect">Хот сонгох</label>
+                <select id="citySelect">
+                    <option value="47.8864,106.9057">Улаанбаатар</option>
+                    <option value="48.0081,91.6405">Ховд</option>
+                    <option value="49.6262,100.1604">Мөрөн</option>
+                    <option value="47.7682,107.284">Баянгол</option>
+                </select>
+                <button type="submit">Харах</button>
+            </form>
+
+            <p id="weatherStatus" role="status"></p>
+
+            <article id="weatherResult" hidden>
+                <h3 id="weatherCity"></h3>
+                <p><strong>Температур:</strong> <span id="temperature"></span> °C</p>
+                <p><strong>Салхи:</strong> <span id="wind"></span> km/h</p>
+                <p><strong>Шинэчлэгдсэн:</strong> <span id="updatedAt"></span></p>
+            </article>
+        </section>
+    </main>
+
+    <script src="lab10.js"></script>
+</body>
+</html>
