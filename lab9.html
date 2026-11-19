@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="mn" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lab 9 · JavaScript DOM</title>
+    <link rel="stylesheet" href="style07.min.css">
+    <link rel="stylesheet" href="lab-controls.css">
+    <link rel="stylesheet" href="lab9.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Ganbayar · Lab 9</div>
+            <ul class="nav-links">
+                <li><a href="lab6.html">Lab 6/7</a></li>
+                <li><a href="lab8-bootstrap.html">Bootstrap</a></li>
+                <li><a href="lab8-tailwind.html">Tailwind</a></li>
+                <li><a href="lab9.html" class="active">Lab 9</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-wrapper">
+        <section class="hero-banner">
+            <h1>Ёоёоны захиалга</h1>
+            <p>Шүүлтүүр, эрэмбэлэлт, захиалгын сагс болон localStorage туршилт.</p>
+        </section>
+
+        <section class="lab9-toolbar" aria-label="Бүтээгдэхүүн удирдах">
+            <label>
+                Хайх
+                <input id="searchInput" type="search" placeholder="Нэрээр хайх">
+            </label>
+
+            <label>
+                Үнийн түвшин
+                <select id="priceFilter">
+                    <option value="all">Бүгд</option>
+                    <option value="250">250,000₮ хүртэл</option>
+                    <option value="300">300,000₮ хүртэл</option>
+                    <option value="351">300,000₮-ээс дээш</option>
+                </select>
+            </label>
+
+            <label>
+                Эрэмбэлэх
+                <select id="sortSelect">
+                    <option value="default">Анхны дараалал</option>
+                    <option value="low">Үнэ: бага → өндөр</option>
+                    <option value="high">Үнэ: өндөр → бага</option>
+                </select>
+            </label>
+
+            <button id="themeToggle" type="button">🌙 Горим</button>
+        </section>
+
+        <p id="productCount" class="product-count" aria-live="polite"></p>
+        <section id="productGrid" class="grid-gallery"></section>
+
+        <aside class="cart-panel" aria-labelledby="cartTitle">
+            <h2 id="cartTitle">Захиалгын сагс</h2>
+            <ul id="cartList"></ul>
+            <p>Нийт: <strong id="cartTotal">0₮</strong></p>
+            <button id="clearCart" type="button">Сагс цэвэрлэх</button>
+        </aside>
+
+        <section class="order-section">
+            <h2>Захиалга илгээх</h2>
+            <form id="orderForm" novalidate>
+                <label>
+                    Нэр
+                    <input id="customerName" name="name" minlength="2" required>
+                </label>
+
+                <label>
+                    Утас
+                    <input
+                        id="customerPhone"
+                        name="phone"
+                        type="tel"
+                        pattern="[0-9]{8}"
+                        placeholder="99112233"
+                        required>
+                </label>
+
+                <label>
+                    Хаяг
+                    <textarea id="customerAddress" name="address" minlength="5" required></textarea>
+                </label>
+
+                <p id="formError" class="form-error" role="alert"></p>
+                <button type="submit">Захиалга баталгаажуулах</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="lab9.js"></script>
+</body>
+</html>
